@@ -1,0 +1,15 @@
+#version 330 core
+layout (location = 0) in vec3 attribute_vertex;
+layout (location = 1) in vec2 attribute_textureVertex;
+layout (location = 2) in vec3 attribute_normalVertex;
+
+uniform mat4 viewMatrix;
+uniform mat4 lightViewMatrix;
+
+void main(){
+
+	vec4 vertexPosition = vec4(attribute_vertex, 1.0);
+
+	gl_Position = vertexPosition * viewMatrix;
+
+}
